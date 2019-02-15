@@ -1,0 +1,14 @@
+{
+  "application.js": "/entrypoints/js/application-fc534cc16c100e66ae99.js",
+  "application.js.map": "/entrypoints/js/application-fc534cc16c100e66ae99.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/entrypoints/js/application-fc534cc16c100e66ae99.js"
+      ],
+      "js.map": [
+        "/entrypoints/js/application-fc534cc16c100e66ae99.js.map"
+      ]
+    }
+  }
+}
