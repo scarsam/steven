@@ -4,33 +4,41 @@ import QuizStep2 from "components/quiz_step_2";
 
 class QuizContainer extends React.Component {
   state = {
-    currentStep: 1
+    currentStep: 1,
+    name: "",
+    state: ""
+  };
+
+  saveAndContinue = () => {
+    console.log("move on");
   };
 
   nextStep = () => {
     let currentStep = this.state.currentStep;
-    currentStep++;
-    this.setState({ currentStep });
-    console.log("Next step");
+    if (currentStep < 2) {
+      currentStep++;
+      this.setState({ currentStep });
+    }
   };
 
   prevStep = () => {
     let currentStep = this.state.currentStep;
-    currentStep--;
-    this.setState({ currentStep });
-    console.log("Prev step");
+    if (currentStep > 1) {
+      currentStep--;
+      this.setState({ currentStep });
+    }
   };
 
   render() {
     return (
-      <div>
+      <form>
         <QuizStep1 currentStep={this.state.currentStep} />
         <QuizStep2 currentStep={this.state.currentStep} />
         <button className="padding-left" onClick={this.nextStep}>
           Next Step
         </button>
         <button onClick={this.prevStep}>Prev Step</button>
-      </div>
+      </form>
     );
   }
 }
