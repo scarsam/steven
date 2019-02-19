@@ -8,13 +8,13 @@
 // layout file, like app/views/layouts/application.html.erb
 import React from "react";
 import ReactDOM from "react-dom";
-import Hello from "components/hello_react";
+import Quiz from "components/quiz_container";
 
 console.log("Hello World from Webpacker");
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Quiz />,
     document.body.appendChild(document.createElement("div"))
   );
 });
