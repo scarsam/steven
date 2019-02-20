@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get '/quiz', to: 'home#quiz', as: 'quiz'
   get '/selection', to: 'home#selection', as: 'selection'
+  post '/test', to: 'home#test', as: 'test'
 
 end

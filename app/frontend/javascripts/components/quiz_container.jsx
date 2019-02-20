@@ -5,12 +5,28 @@ import QuizStep2 from "components/quiz_step_2";
 class QuizContainer extends React.Component {
   state = {
     currentStep: 1,
-    name: "",
-    state: ""
+    price: "",
+    category: ""
   };
 
-  saveAndContinue = () => {
-    console.log("move on");
+  componentDidMount() {}
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const token = document.querySelector("meta[name=csrf-token]").content;
+    fetch("/test", {
+      method: "POST",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-Token": token
+        // "Content-Type": "application/json",
+        // Accept: "application/json"
+      },
+      body: {
+        price: this.state.price,
+        category: this.state.category
+      }
+    });
   };
 
   nextStep = () => {
@@ -29,15 +45,30 @@ class QuizContainer extends React.Component {
     }
   };
 
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     return (
-      <form>
-        <QuizStep1 currentStep={this.state.currentStep} />
-        <QuizStep2 currentStep={this.state.currentStep} />
-        <button className="padding-left" onClick={this.nextStep}>
-          Next Step
-        </button>
-        <button onClick={this.prevStep}>Prev Step</button>
+      <form onSubmit={this.handleSubmit}>
+        <QuizStep1
+          currentStep={this.state.currentStep}
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          price={this.state.price}
+        />
+        <QuizStep2
+          currentStep={this.state.currentStep}
+          handleSubmit={this.handleSubmit}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          category={this.state.category}
+        />
       </form>
     );
   }
