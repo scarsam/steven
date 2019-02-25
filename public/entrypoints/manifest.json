@@ -1,32 +1,32 @@
 {
   "application_styles.css": "/entrypoints/css/application_styles-01b635f4.css",
   "application_styles.css.map": "/entrypoints/css/application_styles-01b635f4.css.map",
-  "application_styles.js": "/entrypoints/js/application_styles-c80fbfb331ac65b42a03.js",
-  "application_styles.js.map": "/entrypoints/js/application_styles-c80fbfb331ac65b42a03.js.map",
+  "application_styles.js": "/entrypoints/js/application_styles-a22ab0e0645dd1493ecf.js",
+  "application_styles.js.map": "/entrypoints/js/application_styles-a22ab0e0645dd1493ecf.js.map",
   "entrypoints": {
     "application_styles": {
       "css": [
         "/entrypoints/css/application_styles-01b635f4.css"
       ],
       "js": [
-        "/entrypoints/js/application_styles-c80fbfb331ac65b42a03.js"
+        "/entrypoints/js/application_styles-a22ab0e0645dd1493ecf.js"
       ],
       "css.map": [
         "/entrypoints/css/application_styles-01b635f4.css.map"
       ],
       "js.map": [
-        "/entrypoints/js/application_styles-c80fbfb331ac65b42a03.js.map"
+        "/entrypoints/js/application_styles-a22ab0e0645dd1493ecf.js.map"
       ]
     },
     "quiz": {
       "js": [
-        "/entrypoints/js/quiz-f3fcd5c1b25debd44136.js"
+        "/entrypoints/js/quiz-3729472931630e7326a0.js"
       ],
       "js.map": [
-        "/entrypoints/js/quiz-f3fcd5c1b25debd44136.js.map"
+        "/entrypoints/js/quiz-3729472931630e7326a0.js.map"
       ]
     }
   },
-  "quiz.js": "/entrypoints/js/quiz-f3fcd5c1b25debd44136.js",
-  "quiz.js.map": "/entrypoints/js/quiz-f3fcd5c1b25debd44136.js.map"
+  "quiz.js": "/entrypoints/js/quiz-3729472931630e7326a0.js",
+  "quiz.js.map": "/entrypoints/js/quiz-3729472931630e7326a0.js.map"
 }

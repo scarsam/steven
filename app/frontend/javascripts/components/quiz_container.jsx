@@ -6,7 +6,11 @@ class QuizContainer extends React.Component {
   state = {
     currentStep: 1,
     price: "",
-    category: ""
+    category: "",
+    answer: {
+      price: null,
+      category: null
+    }
   };
 
   componentDidMount() {}
@@ -18,15 +22,25 @@ class QuizContainer extends React.Component {
       method: "POST",
       headers: {
         "X-Requested-With": "XMLHttpRequest",
-        "X-CSRF-Token": token
-        // "Content-Type": "application/json",
-        // Accept: "application/json"
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
       },
-      body: {
-        price: this.state.price,
-        category: this.state.category
-      }
-    });
+      body: JSON.stringify({
+        quiz: {
+          price: this.state.price,
+          category: this.state.category
+        }
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          answer: {
+            price: data.price,
+            category: data.category
+          }
+        });
+      });
   };
 
   nextStep = () => {
@@ -53,6 +67,7 @@ class QuizContainer extends React.Component {
   };
 
   render() {
+    const { price, category } = this.state.answer;
     return (
       <form onSubmit={this.handleSubmit}>
         <QuizStep1
@@ -69,6 +84,13 @@ class QuizContainer extends React.Component {
           handleChange={this.handleChange}
           category={this.state.category}
         />
+        {price && category && (
+          <div>
+            <h1>This is the answers</h1>
+            <p>price: {price}</p>
+            <p>category: {category}</p>
+          </div>
+        )}
       </form>
     );
   }

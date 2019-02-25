@@ -32,14 +32,12 @@ class QuizStep2 extends React.Component {
           name="category"
           checked={this.props.category === "shopping"}
         />
-        {this.props.category !== "" ? (
-          <>
-            <input type="submit" value="Submit" />
-            <button onClick={this.props.prevStep}>Prev Step</button>
-          </>
-        ) : (
-          <button onClick={this.props.prevStep}>Prev Step</button>
-        )}
+        <input
+          disabled={this.props.category === ""}
+          type="submit"
+          value="Submit"
+        />
+        <button onClick={this.props.prevStep}>Prev Step</button>
       </div>
     );
   }

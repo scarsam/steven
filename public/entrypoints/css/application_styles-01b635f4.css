@@ -1,0 +1,19 @@
+.padding-left {
+  padding-left: 10px; }
+
+h1 {
+  color: red; }
+
+main {
+  align-items: center;
+  display: flex;
+  height: 100vh; }
+
+section {
+  align-items: center;
+  justify-content: center;
+  flex: 1 1;
+  text-align: center; }
+
+
+/*# sourceMappingURL=application_styles-01b635f4.css.map*/

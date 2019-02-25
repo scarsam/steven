@@ -32,14 +32,13 @@ class QuizStep1 extends React.Component {
           name="price"
           checked={this.props.price === "$$$"}
         />
-        {this.props.price !== "" ? (
-          <>
-            <button onClick={this.props.nextStep}>Next Step</button>
-            <button onClick={this.props.prevStep}>Prev Step</button>
-          </>
-        ) : (
-          <button onClick={this.props.prevStep}>Prev Step</button>
-        )}
+        <button
+          disabled={this.props.price === ""}
+          onClick={this.props.nextStep}
+        >
+          Next Step
+        </button>
+        <button onClick={this.props.prevStep}>Prev Step</button>
       </div>
     );
   }
