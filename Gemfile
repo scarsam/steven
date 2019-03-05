@@ -48,3 +48,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'webpacker', '>= 4.0.x'
 gem 'foreman'
+
+gem 'omniauth-google-oauth2'
